@@ -1,12 +1,10 @@
 import "./App.css";
-import BoardRow from "./components/BoardRow";
+import Board from "./components/Board";
 
 function App() {
   return (
     <>
-      <BoardRow />
-      <BoardRow />
-      <BoardRow />
+      <Board />
     </>
   );
 }

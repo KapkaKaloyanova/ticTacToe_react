@@ -2,9 +2,10 @@ import { useState } from "react";
 import Square from "./Square";
 import calculateWinner from "../utils/calculateWinner";
 
-export default function Board() {
-  const [xIsNext, setXIsNext] = useState(true);
-  const [squares, setSquares] = useState(Array(9).fill(null));
+export default function Board({ xIsNext, squares, onPlay }) {
+  // const [xIsNext, setXIsNext] = useState(true);
+  // const [squares, setSquares] = useState(Array(9).fill(null));
+  // these states now live in the Game component
   
   function handleClick(i){
     if (calculateWinner(squares) || squares[i]) {
@@ -16,8 +17,10 @@ export default function Board() {
     } else {
       nextSquares[i] = 'O';
     }
-    setSquares(nextSquares);
-    setXIsNext(!xIsNext);
+    // setSquares(nextSquares); 
+    // setXIsNext(!xIsNext);
+    // these two lines are now executed in the Game component
+    onPlay(nextSquares);
   }
   
   const winner = calculateWinner(squares);

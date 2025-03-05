@@ -1,5 +1,5 @@
 
-export default function Square({value, onSquareClick}){
+export default function Square({ value, onSquareClick }){
 
     return(
         <button 
